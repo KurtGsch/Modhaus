@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modhaus Real Estate - Fair Cash Offers & Quick Help</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-brown: #8B4513;
+            --secondary-brown: #A0522D;
+            --warm-beige: #F5DEB3;
+            --text-brown: #654321;
+            --light-beige: #FDF5E6;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            background-color: var(--light-beige);
+            color: var(--text-brown);
+        }
+        
+        .bg-primary { background-color: var(--primary-brown); }
+        .bg-secondary { background-color: var(--secondary-brown); }
+        .bg-beige { background-color: var(--warm-beige); }
+        .text-primary { color: var(--primary-brown); }
+        .text-secondary { color: var(--secondary-brown); }
+        .border-primary { border-color: var(--primary-brown); }
+        
+        .page-section {
+            display: none;
+        }
+        
+        .page-section.active {
+            display: block;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-brown);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-brown);
+            transform: translateY(-2px);
+        }
+        
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            background-color: rgba(255,255,255,0.2);
+        }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border: 2px solid var(--warm-beige);
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--warm-beige) 0%, var(--light-beige) 100%);
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--warm-beige);
+            border-radius: 6px;
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-brown);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-primary shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <img src="https://page1.genspark.site/v1/base64_upload/9878193e33e87980243ffac1dcafa800" alt="Modhaus Real Estate" class="h-12 mr-4">
+                    <div>
+                        <h1 class="text-white text-xl font-bold">Modhaus Real Estate</h1>
+                        <p class="text-white text-sm opacity-90">WE BUY HOMES!</p>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex space-x-4">
+                    <a href="#" class="nav-link active" onclick="showPage('home')">Home</a>
+                    <a href="#" class="nav-link" onclick="showPage('foreclosure')">Pre-Foreclosure</a>
+                    <a href="#" class="nav-link" onclick="showPage('inherited')">Inherited Homes</a>
+                    <a href="#" class="nav-link" onclick="showPage('taxes')">Tax Issues</a>
+                </div>
+                
+                <div class="text-right">
+                    <a href="tel:9725565375" class="text-white text-lg font-bold">
+                        <i class="fas fa-phone mr-2"></i>(972) 556-5375
+                    </a>
+                    <br>
+                    <a href="#" class="btn-primary mt-2 text-sm" onclick="showPage('contact')">Get Cash Offer</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Home Page -->
+    <div id="home" class="page-section active">
+        <!-- Hero Section -->
+        <section class="hero-section py-16">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-primary mb-6">
+                    Get Your Fair Cash Offer Today
+                </h1>
+                <p class="text-xl text-secondary mb-8 max-w-2xl mx-auto">
+                    We help homeowners sell quickly with fair, competitive offers. Close in 30 days or less with no hassles, no repairs needed.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="tel:9725565375" class="btn-primary text-lg px-8 py-4">
+                        <i class="fas fa-phone mr-2"></i>Call (972) 556-5375
+                    </a>
+                    <a href="#" class="btn-primary text-lg px-8 py-4" onclick="showPage('contact')">
+                        Get Free Offer
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-primary mb-12">How We Help Homeowners</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="card text-center">
+                        <div class="text-4xl text-secondary mb-4">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-4">Pre-Foreclosure Help</h3>
+                        <p class="text-gray-700 mb-4">Stop foreclosure quickly with our fair cash offers. We understand time-sensitive situations.</p>
+                        <a href="#" class="btn-primary" onclick="showPage('foreclosure')">Learn More</a>
+                    </div>
+                    
+                    <div class="card text-center">
+                        <div class="text-4xl text-secondary mb-4">
+                            <i class="fas fa-key"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-4">Inherited Properties</h3>
+                        <p class="text-gray-700 mb-4">Sell inherited homes quickly without the stress of managing property from a distance.</p>
+                        <a href="#" class="btn-primary" onclick="showPage('inherited')">Learn More</a>
+                    </div>
+                    
+                    <div class="card text-center">
+                        <div class="text-4xl text-secondary mb-4">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-4">Tax Issues</h3>
+                        <p class="text-gray-700 mb-4">Behind on property taxes? We can help you avoid liens and resolve tax problems.</p>
+                        <a href="#" class="btn-primary" onclick="showPage('taxes')">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="py-16 bg-beige">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-primary mb-12">Why Choose Modhaus Real Estate?</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="text-3xl text-secondary mb-4">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-primary mb-2">Fair Offers</h3>
+                        <p class="text-gray-700">Competitive, honest pricing for your home</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="text-3xl text-secondary mb-4">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-primary mb-2">Quick Closing</h3>
+                        <p class="text-gray-700">Close in 30 days or less</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="text-3xl text-secondary mb-4">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-primary mb-2">No Fees</h3>
+                        <p class="text-gray-700">No commissions or hidden costs</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="text-3xl text-secondary mb-4">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-primary mb-2">As-Is Purchase</h3>
+                        <p class="text-gray-700">No repairs or cleaning needed</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-primary mb-12">Simple 4-Step Process</h2>
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="bg-primary text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">1</div>
+                        <h3 class="text-lg font-bold text-primary mb-2">Contact Us</h3>
+                        <p class="text-gray-700">Call or fill out our form</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="bg-primary text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">2</div>
+                        <h3 class="text-lg font-bold text-primary mb-2">Property Review</h3>
+                        <p class="text-gray-700">We assess your home and situation</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="bg-primary text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">3</div>
+                        <h3 class="text-lg font-bold text-primary mb-2">Fair Offer</h3>
+                        <p class="text-gray-700">Receive a competitive cash offer</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="bg-primary text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">4</div>
+                        <h3 class="text-lg font-bold text-primary mb-2">Close Fast</h3>
+                        <p class="text-gray-700">Close in 30 days or less</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Pre-Foreclosure Page -->
+    <div id="foreclosure" class="page-section">
+        <section class="hero-section py-16">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-primary mb-6">
+                    Stop Foreclosure Today
+                </h1>
+                <p class="text-xl text-secondary mb-8 max-w-3xl mx-auto">
+                    Don't lose your home to foreclosure. We provide fast, fair cash offers to help you resolve your situation quickly and move forward with dignity.
+                </p>
+            </div>
+        </section>
+
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <div>
+                        <h2 class="text-3xl font-bold text-primary mb-6">We Understand Your Situation</h2>
+                        <div class="space-y-4 text-gray-700">
+                            <p><i class="fas fa-check text-secondary mr-2"></i> Behind on mortgage payments</p>
+                            <p><i class="fas fa-check text-secondary mr-2"></i> Received foreclosure notice</p>
+                            <p><i class="fas fa-check text-secondary mr-2"></i> Facing financial hardship</p>
+                            <p><i class="fas fa-check text-secondary mr-2"></i> Need to sell quickly</p>
+                            <p><i class="fas fa-check text-secondary mr-2"></i> Want to protect your credit</p>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold text-primary mt-8 mb-4">How We Help</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><i class="fas fa-arrow-right text-secondary mr-2"></i> Quick cash offers within 24 hours</li>
+                            <li><i class="fas fa-arrow-right text-secondary mr-2"></i> Close in 30 days or less</li>
+                            <li><i class="fas fa-arrow-right text-secondary mr-2"></i> No fees or commissions</li>
+                            <li><i class="fas fa-arrow-right text-secondary mr-2"></i> Confidential process</li>
+                            <li><i class="fas fa-arrow-right text-secondary mr-2"></i> Help protect your credit score</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="text-2xl font-bold text-primary mb-6 text-center">Get Help Today</h3>
+                        <form class="space-y-4">
+                            <input type="text" placeholder="Your Name" class="form-input" required>
+                            <input type="tel" placeholder="Phone Number" class="form-input" required>
+                            <input type="email" placeholder="Email Address" class="form-input" required>
+                            <input type="text" placeholder="Property Address" class="form-input" required>
+                            <select class="form-input" required>
+                                <option value="">How far behind on payments?</option>
+                                <option value="1-3">1-3 months</option>
+                                <option value="3-6">3-6 months</option>
+                                <option value="6+">6+ months</option>
+                            </select>
+                            <textarea placeholder="Tell us about your situation (optional)" class="form-input h-24"></textarea>
+                            <button type="submit" class="btn-primary w-full">Get My Fair Cash Offer</button>
+                        </form>
+                        <p class="text-center text-sm text-gray-600 mt-4">
+                            Confidential consultation • No obligation
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Inherited Homes Page -->
+    <div id="inherited" class="page-section">
+        <section class="hero-section py-16">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-primary mb-6">
+                    Inherited a House? We Can Help
+                </h1>
+                <p class="text-xl text-secondary mb-8 max-w-3xl mx-auto">
+                    Dealing with an inherited property can be overwhelming. We make it simple with fair cash offers and quick closings, so you can focus on what matters most.
+                </p>
+            </div>
+        </section>
+
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <div>
+                        <h2 class="text-3xl font-bold text-primary mb-6">Common Inherited Property Challenges</h2>
+                        <div class="space-y-4 text-gray-700">
+                            <p><i class="fas fa-exclamation-triangle text-secondary mr-2"></i> Property needs extensive repairs</p>
+                            <p><i class="fas fa-exclamation-triangle text-secondary mr-2"></i> Located far from where you live</p>
+                            <p><i class="fas fa-exclamation-triangle text-secondary mr-2"></i> Multiple heirs involved</p>
+                            <p><i class="fas fa-exclamation-triangle text-secondary mr-2"></i> Ongoing maintenance costs</p>
+                            <p><i class="fas fa-exclamation-triangle text-secondary mr-2"></i> Property taxes piling up</p>
+                            <p><i class="fas fa-exclamation-triangle text-secondary mr-2"></i> Emotional attachment vs. practical needs</p>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold text-primary mt-8 mb-4">Our Simple Solution</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><i class="fas fa-heart text-secondary mr-2"></i> Respectful, understanding approach</li>
+                            <li><i class="fas fa-clock text-secondary mr-2"></i> Quick process - close in 30 days</li>
+                            <li><i class="fas fa-tools text-secondary mr-2"></i> Buy as-is, no repairs needed</li>
+                            <li><i class="fas fa-handshake text-secondary mr-2"></i> Work with all heirs involved</li>
+                            <li><i class="fas fa-dollar-sign text-secondary mr-2"></i> Fair market value offers</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="text-2xl font-bold text-primary mb-6 text-center">Tell Us About Your Inherited Property</h3>
+                        <form class="space-y-4">
+                            <input type="text" placeholder="Your Name" class="form-input" required>
+                            <input type="tel" placeholder="Phone Number" class="form-input" required>
+                            <input type="email" placeholder="Email Address" class="form-input" required>
+                            <input type="text" placeholder="Inherited Property Address" class="form-input" required>
+                            <select class="form-input" required>
+                                <option value="">Property Condition</option>
+                                <option value="good">Good condition</option>
+                                <option value="needs-work">Needs some work</option>
+                                <option value="major-repairs">Needs major repairs</option>
+                                <option value="unsure">Not sure</option>
+                            </select>
+                            <select class="form-input" required>
+                                <option value="">Number of Heirs</option>
+                                <option value="1">Just me</option>
+                                <option value="2">2 heirs</option>
+                                <option value="3-4">3-4 heirs</option>
+                                <option value="5+">5+ heirs</option>
+                            </select>
+                            <textarea placeholder="Additional details about the property or your situation" class="form-input h-24"></textarea>
+                            <button type="submit" class="btn-primary w-full">Get My Fair Cash Offer</button>
+                        </form>
+                        <p class="text-center text-sm text-gray-600 mt-4">
+                            Free consultation • No pressure • Fair offers
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Tax Issues Page -->
+    <div id="taxes" class="page-section">
+        <section class="hero-section py-16">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-primary mb-6">
+                    Behind on Property Taxes?
+                </h1>
+                <p class="text-xl text-secondary mb-8 max-w-3xl mx-auto">
+                    Don't let tax liens take your home. We help homeowners resolve property tax issues quickly with fair cash offers that can pay off your tax debt.
+                </p>
+            </div>
+        </section>
+
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <div>
+                        <h2 class="text-3xl font-bold text-primary mb-6">Property Tax Problems We Solve</h2>
+                        <div class="space-y-4 text-gray-700">
+                            <p><i class="fas fa-receipt text-secondary mr-2"></i> Years of unpaid property taxes</p>
+                            <p><i class="fas fa-gavel text-secondary mr-2"></i> Tax lien notices received</p>
+                            <p><i class="fas fa-percentage text-secondary mr-2"></i> High interest and penalties</p>
+                            <p><i class="fas fa-home text-secondary mr-2"></i> Risk of tax foreclosure</p>
+                            <p><i class="fas fa-calendar-times text-secondary mr-2"></i> Missed payment deadlines</p>
+                        </div>
+                        
+                        <div class="bg-red-50 border-l-4 border-red-400 p-4 mt-6">
+                            <h4 class="font-bold text-red-800 mb-2">Time Is Critical</h4>
+                            <p class="text-red-700">Property tax liens can lead to foreclosure. The sooner you act, the more options you have.</p>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold text-primary mt-8 mb-4">How We Help</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><i class="fas fa-shield-alt text-secondary mr-2"></i> Prevent tax foreclosure</li>
+                            <li><i class="fas fa-calculator text-secondary mr-2"></i> Pay off tax debt at closing</li>
+                            <li><i class="fas fa-clock text-secondary mr-2"></i> Quick 30-day process</li>
+                            <li><i class="fas fa-handshake text-secondary mr-2"></i> Fair offers despite tax issues</li>
+                            <li><i class="fas fa-file-contract text-secondary mr-2"></i> Handle all paperwork</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="text-2xl font-bold text-primary mb-6 text-center">Get Help With Tax Issues</h3>
+                        <form class="space-y-4">
+                            <input type="text" placeholder="Your Name" class="form-input" required>
+                            <input type="tel" placeholder="Phone Number" class="form-input" required>
+                            <input type="email" placeholder="Email Address" class="form-input" required>
+                            <input type="text" placeholder="Property Address" class="form-input" required>
+                            <select class="form-input" required>
+                                <option value="">How much do you owe in taxes?</option>
+                                <option value="under-5k">Under $5,000</option>
+                                <option value="5k-15k">$5,000 - $15,000</option>
+                                <option value="15k-30k">$15,000 - $30,000</option>
+                                <option value="over-30k">Over $30,000</option>
+                                <option value="unsure">Not sure</option>
+                            </select>
+                            <select class="form-input" required>
+                                <option value="">How long behind on taxes?</option>
+                                <option value="1-year">1 year</option>
+                                <option value="2-3-years">2-3 years</option>
+                                <option value="4-5-years">4-5 years</option>
+                                <option value="over-5-years">Over 5 years</option>
+                            </select>
+                            <div class="flex items-center">
+                                <input type="checkbox" id="lien-notice" class="mr-2">
+                                <label for="lien-notice" class="text-sm text-gray-700">I have received a tax lien notice</label>
+                            </div>
+                            <textarea placeholder="Tell us about your situation and any deadlines you're facing" class="form-input h-24"></textarea>
+                            <button type="submit" class="btn-primary w-full">Get Emergency Cash Offer</button>
+                        </form>
+                        <p class="text-center text-sm text-gray-600 mt-4">
+                            Urgent situations handled quickly • Confidential
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact/General Lead Capture Page -->
+    <div id="contact" class="page-section">
+        <section class="hero-section py-16">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-primary mb-6">
+                    Get Your Fair Cash Offer
+                </h1>
+                <p class="text-xl text-secondary mb-8 max-w-2xl mx-auto">
+                    Ready to sell your home quickly? Fill out the form below or call us directly. We provide fair, competitive offers and can close in 30 days or less.
+                </p>
+            </div>
+        </section>
+
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="max-w-2xl mx-auto">
+                    <div class="card">
+                        <div class="text-center mb-8">
+                            <h2 class="text-3xl font-bold text-primary mb-4">Tell Us About Your Property</h2>
+                            <p class="text-gray-600">All information is kept confidential. No obligation.</p>
+                        </div>
+                        
+                        <form class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <input type="text" placeholder="First Name" class="form-input" required>
+                                <input type="text" placeholder="Last Name" class="form-input" required>
+                            </div>
+                            
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <input type="tel" placeholder="Phone Number" class="form-input" required>
+                                <input type="email" placeholder="Email Address" class="form-input" required>
+                            </div>
+                            
+                            <input type="text" placeholder="Property Address" class="form-input" required>
+                            
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <select class="form-input" required>
+                                    <option value="">Property Type</option>
+                                    <option value="single-family">Single Family Home</option>
+                                    <option value="townhouse">Townhouse</option>
+                                    <option value="condo">Condo</option>
+                                    <option value="multi-family">Multi-Family</option>
+                                    <option value="mobile">Mobile Home</option>
+                                </select>
+                                
+                                <select class="form-input" required>
+                                    <option value="">Property Condition</option>
+                                    <option value="excellent">Excellent</option>
+                                    <option value="good">Good</option>
+                                    <option value="fair">Fair</option>
+                                    <option value="needs-work">Needs Work</option>
+                                    <option value="poor">Poor</option>
+                                </select>
+                            </div>
+                            
+                            <select class="form-input" required>
+                                <option value="">Why are you selling?</option>
+                                <option value="foreclosure">Avoiding Foreclosure</option>
+                                <option value="inherited">Inherited Property</option>
+                                <option value="taxes">Behind on Taxes</option>
+                                <option value="relocating">Relocating</option>
+                                <option value="downsizing">Downsizing</option>
+                                <option value="financial">Financial Hardship</option>
+                                <option value="other">Other</option>
+                            </select>
+                            
+                            <select class="form-input" required>
+                                <option value="">When do you need to sell?</option>
+                                <option value="asap">ASAP</option>
+                                <option value="30-days">Within 30 days</option>
+                                <option value="60-days">Within 60 days</option>
+                                <option value="90-days">Within 90 days</option>
+                                <option value="no-rush">No rush</option>
+                            </select>
+                            
+                            <textarea placeholder="Additional details about your property or situation" class="form-input h-32"></textarea>
+                            
+                            <button type="submit" class="btn-primary w-full text-lg py-4">
+                                Get My Fair Cash Offer Now
+                            </button>
+                        </form>
+                        
+                        <div class="text-center mt-8 pt-8 border-t border-gray-200">
+                            <p class="text-lg font-semibold text-primary mb-2">Prefer to Talk?</p>
+                            <a href="tel:9725565375" class="text-2xl font-bold text-secondary">
+                                <i class="fas fa-phone mr-2"></i>(972) 556-5375
+                            </a>
+                            <p class="text-sm text-gray-600 mt-2">Available 7 days a week</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <img src="https://page1.genspark.site/v1/base64_upload/9878193e33e87980243ffac1dcafa800" alt="Modhaus Real Estate" class="h-12 mb-4 filter brightness-0 invert">
+                    <h3 class="text-xl font-bold mb-2">Modhaus Real Estate</h3>
+                    <p class="text-sm opacity-90">WE BUY HOMES!</p>
+                    <p class="mt-4 text-sm opacity-90">Fair cash offers for homeowners who need to sell quickly. We help with foreclosure, inherited properties, and tax issues.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" onclick="showPage('home')" class="hover:text-yellow-200">Home Buyers</a></li>
+                        <li><a href="#" onclick="showPage('foreclosure')" class="hover:text-yellow-200">Pre-Foreclosure Help</a></li>
+                        <li><a href="#" onclick="showPage('inherited')" class="hover:text-yellow-200">Inherited Properties</a></li>
+                        <li><a href="#" onclick="showPage('taxes')" class="hover:text-yellow-200">Tax Issues</a></li>
+                        <li><a href="#" onclick="showPage('contact')" class="hover:text-yellow-200">Get Cash Offer</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact Info</h4>
+                    <div class="space-y-2 text-sm">
+                        <p><i class="fas fa-phone mr-2"></i><a href="tel:9725565375" class="hover:text-yellow-200">(972) 556-5375</a></p>
+                        <p><i class="fas fa-envelope mr-2"></i><a href="mailto:modhausre@gmail.com" class="hover:text-yellow-200">modhausre@gmail.com</a></p>
+                        <p><i class="fas fa-clock mr-2"></i>Available 7 days a week</p>
+                        <p><i class="fas fa-handshake mr-2"></i>Close in 30 days or less</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-white border-opacity-20 mt-8 pt-8 text-center text-sm opacity-75">
+                <p>&copy; 2024 Modhaus Real Estate. All rights reserved. We are not real estate agents or brokers.</p>
+            </div>
+        </footer>
+
+    <script>
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page-section');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Update navigation
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => link.classList.remove('active'));
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Form submission handlers
+        document.addEventListener('DOMContentLoaded', function() {
+            const forms = document.querySelectorAll('form');
+            forms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Thank you for your interest! We will contact you within 24 hours with your cash offer.');
+                });
+            });
+        });
+
+        // Mobile menu toggle (if needed)
+        function toggleMobileMenu() {
+            // Add mobile menu functionality if needed
+        }
+    </script>
+</body>
+</html>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDrinQ55OMLUuqoKSYDXYDYr6blgC2VjgcRNrufwWsqLDOMwsInyXkP6clCxX2gr1zwXMdYskIS0wJJTpoxirlPDAeC1ZgKm5r5B6H0fTMPsIMZuKnjrPXS1kWmJVHfMKKzjlYYv0VJb0%2BhLC0qruFq83744Gbp%2Fhs%2BZ2u27XBascxbAi68cI4Wmxa3gYAm0bF0ahQyAGZgSj43AfdWHzQeh2qNnEAVow9YylG7MgeA3VdKXKIvG8OzVJBBcRx5NvL0NMEl1tTwffp8FTE9TNLP1rQerKa%2FbjVvhaRKFcEKzcABpxqb2O4%2FWsyTEQbeJcrv186QgQD6njN%2FgQfnw5H5vIS8dM1lMA%2B7NaPnpJnoebkcXswI579PA69y28zSe0j6GAScEyDLXSEUtfijvnVH2HC6GBYua5WRNcVQdiWzWqO3K9ZGVtbU3e9nui3wtImT%2F9sOimmxuMQLFy5s7luLU%2FfqaHDsSxpJilDnkeRh9%2BWx9Jl3qDhQFEfBZHTPIVfg%3D%3D";
+        window.__genspark_locale = "en-US";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDrinQ55OMLUuqoKSYDXYDYr6blgC2VjgcRNrufwWsqLDOMwsInyXkP6clCxX2gr1zwXMdYskIS0wJJTpoxirlPDAeC1ZgKm5r5B6H0fTMPsIMZuKnjrPXS1kWmJVHfMKKzjlYYv0VJb0+hLC0qruFq83744Gbp/hs+Z2u27XBascxbAi68cI4Wmxa3gYAm0bF0ahQyAGZgSj43AfdWHzQeh2qNnEAVow9YylG7MgeA3VdKXKIvG8OzVJBBcRx5NvL0NMEl1tTwffp8FTE9TNLP1rQerKa/bjVvhaRKFcEKzcABpxqb2O4/WsyTEQbeJcrv186QgQD6njN/gQfnw5H5vIS8dM1lMA+7NaPnpJnoebkcXswI579PA69y28zSe0j6GAScEyDLXSEUtfijvnVH2HC6GBYua5WRNcVQdiWzWqO3K9ZGVtbU3e9nui3wtImT/9sOimmxuMQLFy5s7luLU/fqaHDsSxpJilDnkeRh9+Wx9Jl3qDhQFEfBZHTPIVfg==";
+    </script>
+    
+        <script id="html_badge_script2" src="https://www.genspark.ai/html_badge.js"></script>
+        
+    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
+    
